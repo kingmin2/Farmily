@@ -1,0 +1,8 @@
+@charset "UTF-8";
+#mainImg {
+	margin: 0px;
+}
+#mainImg img {
+	padding: 0px;
+	width: 1300px;
+}
