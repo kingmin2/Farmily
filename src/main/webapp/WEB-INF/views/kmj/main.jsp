@@ -13,6 +13,7 @@
 	<div class="container" id="mainImg">
 		<div class="row">
 			<img alt="" src="img/main.PNG">
+			수정
 		</div>	
 	</div>
 <jsp:include page="/WEB-INF/views/main/footer.jsp"></jsp:include>
