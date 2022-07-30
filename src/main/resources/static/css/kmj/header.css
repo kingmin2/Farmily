@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+#FarmilyHeader {
+	background-color: #f2ebdd;
+	color: #613d1a;
+}
+#home {
+	font-family: 'Edu VIC WA NT Beginner', cursive;
+	font-size: 40px;
+	padding: 10px;
+	text-decoration: none;
+	color: #528a36;
+}
+ 
+#hostSearch {
+	text-decoration: none;
+	color: #613d1a;
+	font-size: 20px;
+}
+
+#bar {
+	float: right;
+}
+#bar ul {
+	list-style: none;
+}
+#bar li {
+	padding:10px;
+	font-size:20px;
+	display: inline-block;
+}
