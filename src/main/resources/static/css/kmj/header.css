@@ -1,15 +1,16 @@
 @charset "UTF-8";
 
 * {
-	font-family: 'Noto Sans KR', sans-serif;
+	font-family: 'SCoreDream';
 }
 
 #FarmilyHeader {
 	background-color: #f2ebdd;
 	color: #613d1a;
 }
+
 #home {
-	font-family: 'Edu VIC WA NT Beginner', cursive;
+	font-family: 'Mochiy Pop One', sans-serif;
 	font-size: 40px;
 	padding: 10px;
 	text-decoration: none;
@@ -19,17 +20,36 @@
 #hostSearch {
 	text-decoration: none;
 	color: #613d1a;
-	font-size: 20px;
+	font-size: 16px;
 }
 
 #bar {
 	float: right;
 }
+
 #bar ul {
 	list-style: none;
+	margin-bottom: 0;
 }
+
 #bar li {
 	padding:10px;
 	font-size:20px;
 	display: inline-block;
+}
+
+#bar a {
+	cursor: pointer;
+}
+
+.signIn {
+	background-color: #f5821f;
+	padding: 8px 12px;
+    border-radius: 11px;
+    text-decoration: none;
+    color: white;
+}
+
+.signIn:hover {
+	color: white;
 }

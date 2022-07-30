@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
- 
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,10 +12,9 @@
 	<jsp:include page="/WEB-INF/views/main/header.jsp"></jsp:include>
 		<div class="container">
 		<!-- 여기 하단으로 -->
-			<div class="row">
-				<img alt="" class="mainImg" src="img/farm.jpg">
-			</div>
-		
+			 
+			 
+			 
 		<!-- 여기 상단으로 -->
 		</div>
 	<jsp:include page="/WEB-INF/views/main/footer.jsp"></jsp:include>
