@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-html, body {
+body {
 	margin: 0;
 	padding: 0;
 	height: 100%;
@@ -10,6 +10,7 @@ html, body {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
+	margin: 0;
 }
 
 .container {
