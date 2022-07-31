@@ -12,7 +12,7 @@
 	<jsp:include page="/WEB-INF/views/main/header.jsp"></jsp:include>
 		<div class="container">
 		<!-- 여기 하단으로 -->
-			jjjjj
+			jjj
 		<!-- 여기 상단으로 -->
 		</div>
 	<jsp:include page="/WEB-INF/views/main/footer.jsp"></jsp:include>
