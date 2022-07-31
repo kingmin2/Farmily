@@ -12,7 +12,7 @@
 	<jsp:include page="/WEB-INF/views/main/header.jsp"></jsp:include>
 		<div class="container">
 		<!-- 여기 하단으로 -->
-			 
+			 황재환을위해
 			 
 			 
 		<!-- 여기 상단으로 -->
