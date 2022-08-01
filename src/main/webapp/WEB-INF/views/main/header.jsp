@@ -31,7 +31,7 @@
     		<div class="collapse navbar-collapse" id="navbarSupportedContent">
       			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
         			<li class="nav-item">
-          				<a class="nav-link active" aria-current="page" href="#" id="hostSearch">호스트 찾기</a>
+          				<a class="nav-link active" aria-current="page" href="HostSearch" id="hostSearch">호스트 찾기</a>
 			        </li>
 			    </ul>
       			<form class="d-flex">
@@ -44,8 +44,8 @@
 				  				<li>
 				  					<a><i class="fas fa-envelope"></i></a>
 				  				</li>
-				  				<li>
-				  					<a>마이페이지</a>
+				  				<li class="mplist">
+				  					<a href="myPage">마이페이지</a>
 				  				</li>
 				  				<li>
 				  					<a class="signIn">로그인</a>

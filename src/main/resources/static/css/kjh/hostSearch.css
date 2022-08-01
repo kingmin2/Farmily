@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+
+.search{
+	float: left;
+}
+
+.map{
+	float: right;
+}
+
+.input-group mb-3{
+	float: left;
+}
+
+.btn btn-light{
+	float: left;
+}

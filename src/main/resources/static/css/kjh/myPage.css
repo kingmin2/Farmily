@@ -4,23 +4,24 @@ h3{
 	padding-left: 40px;
 }
 
-li{
+.list{
    	padding-bottom: 40px;
 }
 
-li a{
+.list a{
 	line-height:3;
 	text-decoration:none;
 	color:inherit;
 }
 
-li:hover{
+.list:hover{
 	font-weight:bold;
 }
 
 img{
 	width: 30px;
 	height: 30px;
+	margin-right: 5px;
 }
 
 #nav{
