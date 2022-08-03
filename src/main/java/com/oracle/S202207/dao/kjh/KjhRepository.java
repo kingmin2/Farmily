@@ -3,6 +3,7 @@ package com.oracle.S202207.dao.kjh;
 import java.util.List;
 
 import com.oracle.S202207.domain.kjh.HOST;
+import com.oracle.S202207.domain.kjh.Rev;
 
 public interface KjhRepository {
 
@@ -10,6 +11,9 @@ public interface KjhRepository {
 
 	HOST hostDetail(int farmno);
 
-	int memshipchk(String id);
+	int memshipchk(int userno);
+
+	List<Rev> revList(int farmno);
+
 
 }

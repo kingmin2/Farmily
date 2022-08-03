@@ -18,6 +18,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.oracle.S202207.domain.kjh.HOST;
+import com.oracle.S202207.domain.kjh.Rev;
 import com.oracle.S202207.service.kjh.KjhService;
 
 @Controller
@@ -52,12 +53,28 @@ public class KjhController {
 	@RequestMapping(value = "HostDetail")
 	public String hostDetail(HttpServletRequest request, HttpServletResponse response, int farmno, Model model) {
 		System.out.println("KjhController HostDetail Starts...");
+		System.out.println("KjhController HostDetail farmno "+farmno);
 		HOST host=js.hostDetail(farmno);
 		
-		String id=(String)request.getSession().getAttribute("id");
-		int member=js.memshipchk(id);
+		// 상세주소 용 (로그인 세션 잡히면)
+//		String userno=(String)request.getSession().getAttribute("userno"); 
+//		int membership;
+//		if(userno!=null) {
+//			int userno1=Integer.parseInt(userno);
+//			membership=js.memshipchk(userno);
+//		} else {
+//			membership=0;
+//		}
+		
+		int userno=6; // 임의로 잡아줬음 로그인 하면 변경이 될 예정 
+		int membership=js.memshipchk(userno);
+		System.out.println("KjhController membership"+membership);
+		
+		List<Rev> revList=js.revList(farmno);
 		
 		model.addAttribute("info", host);
+		model.addAttribute("membercheck", membership);
+		model.addAttribute("revList", revList);
 		
 		return "kjh/hostDetail";
 	}

@@ -68,7 +68,7 @@
 						<c:forEach var="list" items="${hostList }" varStatus="status">
 							<li class="listhost">
 								<div class="thmimg" >
-									<img alt="" src="img/host/${list.thmimg }" width="200" height="200">
+									<img alt="" src="img/host/${list.thmimg }" width="270" height="250">
 								</div>
 								<div class="shortintro">
 									<a href="HostDetail?farmno=${list.farmno }">${list.shortintro }</a>

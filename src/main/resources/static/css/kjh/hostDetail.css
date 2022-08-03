@@ -1,5 +1,23 @@
 @charset "UTF-8";
-img {
-	width: 400px;
+
+.g-col-6 {
+	border: thin;
+}
+
+.images div {
+	width: auto;
+	height: auto;
+}
+
+.images img {
+	width: 500px;
 	height: 300px;
+}
+
+ul{
+	list-style: none;
+}
+
+.g-col-4{
+	border: thin;
 }

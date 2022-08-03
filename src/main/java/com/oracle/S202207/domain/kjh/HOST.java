@@ -14,36 +14,40 @@ import lombok.Setter;
 @Getter
 public class HOST {
 	@Id
-	int farmno;
-	int userno;
-	int hoststs;
-	int region;
-	String address;
-	int hectar;
-	int type;
-	int sale;
-	int expert;
-	int age;
-	int style;
-	String thmimg;
-	String detimg1;
-	String detimg2;
-	String detimg3;
-	String intro;
-	String shortintro;
-	int ppl;
-	String lat;
-	String lng;
-	Date request_date;
-	Date approve_date;
+	private int farmno;
+	private int userno;
+	private int hoststs;
+	private int region;
+	private String address;
+	private int hectar;
+	private int type;
+	private int sale;
+	private int expert;
+	private int age;
+	private int style;
+	private String thmimg;
+	private String detimg1;
+	private String detimg2;
+	private String detimg3;
+	private String intro;
+	private String shortintro;
+	private int ppl;
+	private String lat;
+	private String lng;
+	private Date request_date;
+	private Date approve_date;
+	
+	// 이름 조회용 조인
+	
+	
 	
 	//// 검색용
 	@Transient
-	Date startdate;
+	private Date startdate;
 	@Transient
-	Date endate;
+	private Date endate;
 	@Transient
-	int confirm;
+	private int confirm;
 	
 
 }

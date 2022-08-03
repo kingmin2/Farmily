@@ -19,6 +19,7 @@
 
 .list_wrap{
 	position: relative;
+	border: thin;
 }
 
 .list_wrap ul{
@@ -51,3 +52,4 @@
 .shortintro a:hover{
 	font: bold;
 }
+
