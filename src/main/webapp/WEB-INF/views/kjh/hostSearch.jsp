@@ -33,7 +33,7 @@
 <body>
 	<div class="wrapper">
 	<jsp:include page="/WEB-INF/views/main/header.jsp"></jsp:include>
-		<div class="container" style="margin: 0px">
+		<div class="container">
 		<!-- 여기 하단으로 -->
 			<div class="search">
 				<form class="row row-cols-lg-auto g-3 align-items-center" action="">

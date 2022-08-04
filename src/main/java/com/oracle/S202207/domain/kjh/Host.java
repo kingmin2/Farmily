@@ -4,6 +4,8 @@ import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
 
 import lombok.Getter;
@@ -12,10 +14,9 @@ import lombok.Setter;
 @Entity
 @Setter
 @Getter
-public class HOST {
+public class Host {
 	@Id
 	private int farmno;
-	private int userno;
 	private int hoststs;
 	private int region;
 	private String address;
@@ -38,7 +39,9 @@ public class HOST {
 	private Date approve_date;
 	
 	// 이름 조회용 조인
-	
+	@ManyToOne
+	@JoinColumn(name = "userno")
+	private Member member;
 	
 	
 	//// 검색용

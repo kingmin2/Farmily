@@ -1,13 +1,17 @@
 package com.oracle.S202207.dao.kjh;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 
-import com.oracle.S202207.domain.kjh.HOST;
+import com.oracle.S202207.domain.kjh.Host;
 import com.oracle.S202207.domain.kjh.Member;
+import com.oracle.S202207.domain.kjh.Res;
 import com.oracle.S202207.domain.kjh.Rev;
 
 @Repository
@@ -20,9 +24,9 @@ public class KjhRepositoryImpl implements KjhRepository {
 
 	// 호스트 리스트 
 	@Override
-	public List<HOST> hostList() {
+	public List<Host> hostList() {
 		System.out.println("KjhRepositoryImpl memshipchk Starts...");
-		List<HOST> hosts=em.createQuery("SELECT h FROM HOST h", HOST.class).getResultList();
+		List<Host> hosts=em.createQuery("SELECT h FROM Host h", Host.class).getResultList();
 		System.out.println("KjhRepositoryImpl hostList hosts.get(0).getFarmno()"+hosts.get(0).getFarmno());
 		return hosts;
 	}
@@ -30,9 +34,9 @@ public class KjhRepositoryImpl implements KjhRepository {
 
 	// 호스트 상세보기 
 	@Override
-	public HOST hostDetail(int farmno) {
+	public Host hostDetail(int farmno) {
 		System.out.println("KjhRepositoryImpl hostDetail Starts...");
-		HOST host=em.find(HOST.class,farmno);
+		Host host=em.find(Host.class,farmno);
 		
 		return host;
 	}
@@ -47,6 +51,24 @@ public class KjhRepositoryImpl implements KjhRepository {
 		return membership;
 	}
 
+
+	// 리뷰 권한 체크 
+	@Override
+	public List<Res> revAuthchk(int farmno, int userno) {
+		System.out.println("KjhRepositoryImpl revAuthchk Starts...");
+		TypedQuery<Res> query=em.createQuery("SELECT rs FROM Res rs WHERE rs.userno="+userno+" AND rs.farmno="+farmno+" AND rs.confirm=1", Res.class);
+		//System.out.println("KjhRepositoryImpl revAuthchk res"+res.getResno());
+		
+		List<Res> res=query.getResultList();
+		
+		if(res.isEmpty()) {
+			return Collections.emptyList();
+		}
+		
+		return res;
+	}
+
+	
 	// 호스트 상세보기 리뷰 
 	@Override
 	public List<Rev> revList(int farmno) {

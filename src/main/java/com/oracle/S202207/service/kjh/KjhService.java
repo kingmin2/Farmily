@@ -1,5 +1,6 @@
 package com.oracle.S202207.service.kjh;
 
+import java.util.Collections;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -7,7 +8,8 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.oracle.S202207.dao.kjh.KjhRepository;
-import com.oracle.S202207.domain.kjh.HOST;
+import com.oracle.S202207.domain.kjh.Host;
+import com.oracle.S202207.domain.kjh.Res;
 import com.oracle.S202207.domain.kjh.Rev;
 
 @Service
@@ -20,18 +22,18 @@ public class KjhService {
 	}
 
 	// 호스트 리스트 
-	public List<HOST> hostList() {
+	public List<Host> hostList() {
 		System.out.println("KjhService hostList Starts...");
-		List<HOST> hosts=jr.hostList();
+		List<Host> hosts=jr.hostList();
 		System.out.println("KjhService hostList hosts.get(0).getFarmno()"+hosts.get(0).getFarmno());
 		
 		return hosts;
 	}
 
 	// 호스트 상세보기 
-	public HOST hostDetail(int farmno) {
+	public Host hostDetail(int farmno) {
 		System.out.println("KjhService hostDetail Starts...");
-		HOST host=jr.hostDetail(farmno);
+		Host host=jr.hostDetail(farmno);
 		System.out.println("KjhService hostDetail host.getAge()"+host.getAge());
 		return host;
 	}
@@ -50,6 +52,15 @@ public class KjhService {
 		List<Rev> revList=jr.revList(farmno);
 		System.out.println("KjhService revList");
 		return revList;
+	}
+
+	// 리뷰 권한 체크 
+	public List<Res> revAuthchk(int farmno, int userno) {
+		System.out.println("KjhService revAuthchk Starts...");
+		List<Res> res=jr.revAuthchk(farmno, userno);
+		System.out.println("KjhService revAuthchk res"+res);
+		//System.out.println("KjhService revAuthchk res"+res.getResno());
+		return res;
 	}
 
 
