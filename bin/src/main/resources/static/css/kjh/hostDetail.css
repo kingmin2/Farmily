@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+.main_container {
+	width: 100%;
+	height: 200%;
+	
+	}
+
+.main_title {
+	width:100%;
+	height:100%;
+	float:left;
+	}
+
+	
+
+.main_title	img {
+	width:33%;
+	height:33%;
+	float: left;
+}
+
+.main_left_btn {
+	width:50%;
+	height:280px;
+	float:left;
+	}
+
+.main_right_btn {
+	width:50%;
+	height:280px;
+	float:left;
+	}
+
+.main_list {
+	width:100%;
+	height:150px;
+	float:left;
+	}
+
+	
+.detail {
+	list-style: none;
+} 
+
+.detail li {
+	text-align: left;
+}
