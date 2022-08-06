@@ -1,19 +1,25 @@
 @charset "UTF-8";
 
+.mplist a{
+	text-decoration:none;
+	color:inherit;
+}
+
 html, body {
 	margin: 0;
 	padding: 0;
-	height: 100%;
 }
 
 .wrapper {
 	display: flex;
 	flex-direction: column;
-	height: 100%;
+	min-height: 100%;
+	margin: 0;
 }
 
 .container {
 	flex: 1;
+
 }
 
 .mainImg {
