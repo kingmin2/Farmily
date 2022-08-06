@@ -16,3 +16,40 @@
 .btn btn-light{
 	float: left;
 }
+
+.list_wrap{
+	position: relative;
+	border: thin;
+}
+
+.list_wrap ul{
+	position: relative;
+	list-style: none;
+}
+
+.listhost {
+	position:relative;
+	float: left;
+	width: calc(100% / 3 - 23px);
+	margin-right: 20px;
+	margin-bottom: 30px;
+}
+
+.listhost:nth-child(3n){
+	margin-right:0;    
+}
+
+.listhost img {
+	background-color: none;
+	margin-bottom: 10px;
+}
+
+.shortintro a {
+	text-decoration:none;
+	color:inherit;
+}
+
+.shortintro a:hover{
+	font: bold;
+}
+
