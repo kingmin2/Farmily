@@ -1,6 +1,6 @@
 package com.oracle.S202207.dao.kjh;
 
-import java.util.Collection;
+import java.sql.Date;
 import java.util.Collections;
 import java.util.List;
 
@@ -78,6 +78,29 @@ public class KjhRepositoryImpl implements KjhRepository {
 		revList=em.createQuery("SELECT r FROM Rev r WHERE r.farmno="+farmno, Rev.class).getResultList();
 		
 		return revList;
+	}
+
+	// 호스트 팝업 필터 검색 
+	@Override
+	public List<Res> hostSearchOptSubmit(Res res) {
+		System.out.println("KjhRepositoryImpl hostSearchOptSubmit Starts...");
+		Date startdate=res.getStartdate();
+		Date endate=res.getEnddate();
+		int confirm=res.getConfirm();
+		
+		int ppl=res.getHost().getPpl();
+		
+		int region=res.getHost().getRegion();
+		int hectar=res.getHost().getHectar();
+		int type=res.getHost().getType();
+		int sale=res.getHost().getSale();
+		int expert=res.getHost().getExpert();
+		int age=res.getHost().getAge();
+		int style=res.getHost().getStyle();
+	
+		List<Res> hostList=null;
+		
+		return hostList;
 	}
 
 }

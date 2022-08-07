@@ -95,10 +95,14 @@ public class KjhController {
 		return "kjh/hostSearchOpt";
 	}
 	
-	// 호스트 상세 조건 팝업창 선택 제출 
+	// 호스트 팝업 필터 검색 
 	@RequestMapping(value = "HostSearchOptSubmit")
-	public String hostSearchOptSubmit(Date startdate, Date endate, int ppl, Model model) {
+	public String hostSearchOptSubmit(Res res, Model model) {
 		System.out.println("KjhController HostSearchOptSubmit Starts...");
+		List<Res> hostList=js.hostSearchOptSubmit(res);
+		
+		
+		
 		return "kjh/hostSearchOpt";
 	}
 	

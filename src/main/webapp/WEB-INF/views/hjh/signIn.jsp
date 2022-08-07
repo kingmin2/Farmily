@@ -17,16 +17,18 @@
 				<div class="titleFrame">
 					<h1 class="signInTitle">FARMily</h1>
 				</div>
-				<div class="IDFrame">
-					<label class="form-label" for="username">ID</label>
-					<input id="username" class="ember-text-field ember-view form-control" required="" name="username" type="email">
-				</div>
-				<div class="pwdFrame">
-					<label class="form-label" for="password">비밀번호</label>
-					<input id="password" class="ember-text-field ember-view form-control" required="" name="password" type="password">
-				</div>
-				<button class="btn text-white" id="btnSignIn" type="submit">로그인</button>
-				<button class="btn text-white" id="btnSignIn" type="submit">회원가입</button>
+				<form action="loginCheck" name="loginForm" id="loginForm" method="post">
+					<div class="IDFrame">
+						<label class="form-label" for="id">ID</label>
+						<input id="id" class="ember-text-field ember-view form-control" required="" name="id" type="text">
+					</div>
+					<div class="pwdFrame">
+						<label class="form-label" for="passwd">비밀번호</label>
+						<input id="passwd" class="ember-text-field ember-view form-control" required="" name="passwd" type="password">
+					</div>
+					<button class="btn text-white" id="btnSignIn" type="submit" onclick="loginCheck">로그인</button>
+				</form>
+				<button class="btn text-white" id="btnSignIn">회원가입</button>
 				<div class="findAccount">
 					<span>ID/비밀번호를 잊어버리셨나요?</span>
 				</div>
@@ -35,5 +37,20 @@
 		</div>
 	<jsp:include page="/WEB-INF/views/main/footer.jsp"></jsp:include>
 	</div>
+	<script type="text/javascript">
+/* 		function loginCheck() {
+			let formData = $("#loginForm").serialize();
+			$ajax(
+					{
+						url:"loginCheck",
+						data:{formData : formData},
+						
+						success:function() {
+							
+						}						
+					}		
+			)
+		} */
+	</script>
 </body>
 </html>

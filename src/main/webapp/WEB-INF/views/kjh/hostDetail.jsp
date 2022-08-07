@@ -13,8 +13,8 @@
 <title>호스트 정보</title>
 <link href="css/kmj/header.css" rel="stylesheet" type="text/css">
 <link href="css/kmj/main.css" rel="stylesheet" type="text/css">
-<link href="css/kmj/footer.css" rel="stylesheet" type="text/css">
 <link href="css/kjh/hostDetail.css" rel="stylesheet" type="text/css">
+<link href="css/kmj/footer.css" rel="stylesheet" type="text/css">
 
 <script src="js/jquery.js"></script>
 <script type="text/javascript" src="js/httpRequest.js"></script>
@@ -22,12 +22,11 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	
 </head>
-<body>
+<body style="height: 100%">
 	<div class="wrapper">
 	<jsp:include page="/WEB-INF/views/main/header.jsp"></jsp:include>
-		<div class="container" style="height: 200%">
+		<div class="container">
 		<!-- 여기 하단으로 -->
-		<div class="main_container">
 			<div class="main_title">
 				<div id="img1"><img alt="" src="img/host/${info.detimg1 }"> </div>
 				<div id="img2"><img alt="" src="img/host/${info.detimg2 }"> </div>
@@ -155,10 +154,17 @@
 						<button>우핑 신청하기</button>
 					</c:if>
 				 </div>
-				 <div class="map">map</div>
-				 <div class="cal">calender</div>
+				 <div class="map_wrap">map
+				 	<div id="map">
+				 		
+				 	</div>
+				 </div>
+				 <div class="cal_wrap">calender
+				 	<div id="cal">
+				 	
+				 	</div>				 
+				 </div>
 			 </div>
-		</div>	
 		<!-- 여기 상단으로 -->
 		</div>
 	<jsp:include page="/WEB-INF/views/main/footer.jsp"></jsp:include>
