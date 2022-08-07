@@ -18,5 +18,7 @@ public interface KjhRepository {
 
 	List<Res> revAuthchk(int farmno, int userno);
 
+	List<Res> hostSearchOptSubmit(Res res);
+
 
 }
