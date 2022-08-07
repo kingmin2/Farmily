@@ -63,5 +63,14 @@ public class KjhService {
 		return res;
 	}
 
+	// 호스트 팝업 필터 검색 
+	public List<Res> hostSearchOptSubmit(Res res) {
+		System.out.println("KjhService hostSearchOptSubmit Starts...");
+		List<Res> hostList=jr.hostSearchOptSubmit(res);
+		
+		
+		return hostList;
+	}
+
 
 }

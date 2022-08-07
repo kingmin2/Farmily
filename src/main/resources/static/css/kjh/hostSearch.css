@@ -3,10 +3,14 @@
 
 .search{
 	float: left;
+	width: 360px;
 }
 
-.map{
+#map{
 	float: right;
+	width: 360px;
+	height: 100%;
+	background: green;
 }
 
 .input-group mb-3{
@@ -31,6 +35,8 @@
 	position:relative;
 	float: left;
 	width: calc(100% / 3 - 23px);
+	width: 300px;
+	height: 
 	margin-right: 20px;
 	margin-bottom: 30px;
 }
@@ -39,17 +45,35 @@
 	margin-right:0;    
 }
 
-.listhost img {
+#thmimg {
 	background-color: none;
 	margin-bottom: 10px;
+	width: 300px;
+	height: 270px;
+	clear: both;
 }
 
-.shortintro a {
+#shortintro{
+	width: 270px;
+	float: left;
+	clear: both;
+}
+
+#wish{
+	width: 30px;
+	float: right;
+	clear: both;
+}
+
+#shortintro a {
 	text-decoration:none;
 	color:inherit;
 }
 
-.shortintro a:hover{
+#shortintro a:hover{
 	font: bold;
 }
 
+.clearfix{
+	padding-left: 0px;
+}

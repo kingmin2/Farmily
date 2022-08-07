@@ -48,7 +48,7 @@
 				  					<a href="myPage">마이페이지</a>
 				  				</li>
 				  				<li>
-				  					<a class="signIn">로그인</a>
+				  					<a href="signIn" class="signIn">로그인</a>
 				  				</li>
 				  			</ul>
 	  					</div>

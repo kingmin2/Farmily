@@ -5,10 +5,9 @@
 	color:inherit;
 }
 
-body {
+html, body {
 	margin: 0;
 	padding: 0;
-	height: 100%;
 }
 
 .wrapper {
@@ -16,6 +15,7 @@ body {
 	flex-direction: column;
 	min-height: 100%;
 	margin: 0;
+	position: relative;
 }
 
 .container {

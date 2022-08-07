@@ -4,7 +4,8 @@
 
 <configuration>
 	<typeAliases>
-	  	 
+	  	 <!-- hjh -->
+	  	 <typeAlias alias="Member" type="com.oracle.S202207.model.hjh.Member"/>
 		
 	</typeAliases>
 </configuration>
