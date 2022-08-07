@@ -35,6 +35,7 @@ public class KgeController {
 //		question.setUserno(userno);
 		List<Question> questionList = kgeService.getListAllQuestion(userno);
 		System.out.println("questionList.size() -->"+questionList.size());
+		System.out.println("questionList.name() -->"+questionList.get(0).getMember().getName());
 		model.addAttribute("questions", questionList);
 		return "kge/questionList";
 	}
