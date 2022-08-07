@@ -4,7 +4,6 @@
 	background-color: #f2ebdd;
 	color: #613d1a;
 	overflow: hidden;
-	position: absolute;
 	bottom: 0;
-	
+	width: 100%;
 }
