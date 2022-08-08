@@ -28,9 +28,9 @@
 		<div class="container">
 		<!-- 여기 하단으로 -->
 			<div class="main_title">
-				<div id="img1"><img alt="" src="img/host/${info.detimg1 }"> </div>
-				<div id="img2"><img alt="" src="img/host/${info.detimg2 }"> </div>
-				<div id="img3"><img alt="" src="img/host/${info.detimg3 }"> </div>
+				<div class="imgu"><img alt="" src="img/host/${info.detimg1 }"> </div>
+				<div class="imgu"><img alt="" src="img/host/${info.detimg2 }"> </div>
+				<div class="imgu"><img alt="" src="img/host/${info.detimg3 }"> </div>
 			</div>	
 			<div class="main_left_btn">
 				<div class="region">

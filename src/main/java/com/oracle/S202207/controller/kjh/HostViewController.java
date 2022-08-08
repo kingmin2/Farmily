@@ -1,7 +1,5 @@
 package com.oracle.S202207.controller.kjh;
 
-import java.net.http.HttpResponse;
-import java.sql.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -10,29 +8,27 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.oracle.S202207.domain.kjh.Host;
 import com.oracle.S202207.domain.kjh.Res;
 import com.oracle.S202207.domain.kjh.Rev;
-import com.oracle.S202207.service.kjh.KjhService;
+import com.oracle.S202207.service.kjh.HostViewService;
 
 @Controller
-public class KjhController {
+public class HostViewController {
 	
-	private final KjhService js;
+	private final HostViewService js;
 
 	@Autowired
-	public KjhController(KjhService js) {
+	public HostViewController(HostViewService js) {
 		this.js=js;
 	}
 	
 	
-	private static final Logger logger=LoggerFactory.getLogger(KjhController.class);
+	private static final Logger logger=LoggerFactory.getLogger(HostViewController.class);
 	
 	@RequestMapping(value = "myPage")
 	public String main(Model model) {

@@ -6,7 +6,7 @@ import com.oracle.S202207.domain.kjh.Host;
 import com.oracle.S202207.domain.kjh.Res;
 import com.oracle.S202207.domain.kjh.Rev;
 
-public interface KjhRepository {
+public interface HostViewRepository {
 
 	List<Host> hostList();
 
