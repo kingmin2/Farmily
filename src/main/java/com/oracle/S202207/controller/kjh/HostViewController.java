@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.simple.JSONArray;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +43,7 @@ public class HostViewController {
 		System.out.println("KjhController HostSearch Starts...");
 		List<Host> hosts=js.hostList();
 		model.addAttribute("hostList", hosts);
+		model.addAttribute("listM", JSONArray.toJSONString(hosts));
 		return "kjh/hostSearch";
 	}
 	
@@ -96,8 +98,6 @@ public class HostViewController {
 	public String hostSearchOptSubmit(Res res, Model model) {
 		System.out.println("KjhController HostSearchOptSubmit Starts...");
 		List<Res> hostList=js.hostSearchOptSubmit(res);
-		
-		
 		
 		return "kjh/hostSearchOpt";
 	}

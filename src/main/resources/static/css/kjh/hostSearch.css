@@ -11,8 +11,8 @@
 }
 
 .map_wrap{
-    visibility: hidden!important;
-    position: fixed;
+   /*  visibility: hidden!important; */
+    /* position: fixed; */
     z-index: 900;
     right: 0;
     top: 0;
@@ -50,12 +50,12 @@
 .listhost {
 	position:relative;
 	float: left;
-	width: calc(100% / 2 - 33px);
+	width: calc(100% / 3 - 23px);
 	margin-right: 20px;
 	margin-bottom: 20px;
 }
 
-.listhost:nth-child(2n){
+.listhost:nth-child(3n){
 	margin-right:0;    
 }
 

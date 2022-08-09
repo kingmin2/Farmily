@@ -13,12 +13,6 @@
 <title>호스트찾기</title>
 <link href="css/kmj/main.css" rel="stylesheet" type="text/css">
 <link href="css/kjh/hostSearch.css" rel="stylesheet" type="text/css">
-
-
-<script src="js/jquery.js"></script>
-<script type="text/javascript" src="js/httpRequest.js"></script>
-<script type="text/javascript"
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	
 <script type="text/javascript">
 	function addoption(){
@@ -28,6 +22,8 @@
 		openWin=window.open(popUrl,"상세조건검색",popOption);
 	}
 </script>	
+
+<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=4sz4wcsnub"></script>
 
 </head>
 <body>
@@ -85,8 +81,44 @@
 			
 
 			<div class="map_wrap">
-				<canvas id="maps">
-				</canvas>
+				<div id="map"  style="width:100%;height:100%;"></div>
+				<script>
+					
+					var hstList=JSON.parse('${listM}');
+					
+					for(var k in hstList ){
+						var $obj=hstList[k];
+						var farm=$obj.farmno;
+						var lat=$obj.lat;
+						var lng=$obj.lng;
+						farmList.push(farm);
+						latList.push(lat);
+						lngList.push(lng);
+					}
+					
+					// 주소리스트
+					farmList.forEach(function())
+			        const locations = [
+			            { place:"건대입구역", lat: 37.539922, lng: 127.070609 },
+			            { place:"어린이대공원역", lat: 37.547263, lng: 127.074181 },
+			        ];
+
+					var mapOptions = {
+					    center: new naver.maps.LatLng(37.3595704, 127.105399),
+					    zoom: 10
+					};
+					
+					var map = new naver.maps.Map('map', mapOptions);
+					
+			        for (var i = 0; i < locations.length; i++) {
+		                var marker = new naver.maps.Marker({
+		                    map: map,
+		                    title: locations[i].place,
+		                    position: new naver.maps.LatLng(locations[i].lat, locations[i].lng),
+		                });
+		            }
+					
+				</script>
 			</div> 
 		<!-- 여기 상단으로 -->
 		</div>
