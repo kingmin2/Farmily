@@ -43,7 +43,6 @@ public class HostViewController {
 		System.out.println("KjhController HostSearch Starts...");
 		List<Host> hosts=js.hostList();
 		model.addAttribute("hostList", hosts);
-		model.addAttribute("listM", JSONArray.toJSONString(hosts));
 		return "kjh/hostSearch";
 	}
 	
