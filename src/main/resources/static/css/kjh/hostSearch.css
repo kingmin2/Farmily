@@ -1,16 +1,31 @@
 @charset "UTF-8";
 
 
-.search{
-	float: left;
-	width: 360px;
+.container-app {
+	display: flex;
 }
 
-#map{
-	float: right;
-	width: 360px;
-	height: 100%;
-	background: green;
+.search{
+	float: left;
+	width: 50%;
+}
+
+.map_wrap{
+   /*  visibility: hidden!important; */
+    /* position: fixed; */
+    z-index: 900;
+    right: 0;
+    top: 0;
+    bottom: 58px;
+    width: 40%;
+    display: flex;
+}
+}
+
+#maps{
+    height: 100%;
+    background: green;
+    width: 100%;
 }
 
 .input-group mb-3{
@@ -23,6 +38,7 @@
 
 .list_wrap{
 	position: relative;
+	width: 100%;
 	border: thin;
 }
 
@@ -35,10 +51,8 @@
 	position:relative;
 	float: left;
 	width: calc(100% / 3 - 23px);
-	width: 300px;
-	height: 
 	margin-right: 20px;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 }
 
 .listhost:nth-child(3n){
@@ -46,23 +60,39 @@
 }
 
 #thmimg {
+	width: 100%;
+	/* min-height: 319px; */
+	min-height: 346.25px;
 	background-color: none;
 	margin-bottom: 10px;
-	width: 300px;
-	height: 270px;
-	clear: both;
+}
+
+#thmimg img{
+	width: 100%;
+	object-fit: cover;
+	height: 346.25px;
 }
 
 #shortintro{
-	width: 270px;
+	width: 90%;
 	float: left;
 	clear: both;
 }
 
 #wish{
-	width: 30px;
+	width: 10%;
 	float: right;
-	clear: both;
+}
+
+.btnwish {
+	background-color: white;
+	border: none;
+	padding: 0;
+}
+
+#wish img{
+	width: auto;
+	height: auto;
 }
 
 #shortintro a {

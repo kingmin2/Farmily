@@ -16,11 +16,10 @@
 <link href="css/kjh/hostDetail.css" rel="stylesheet" type="text/css">
 <link href="css/kmj/footer.css" rel="stylesheet" type="text/css">
 
-<script src="js/jquery.js"></script>
 <script type="text/javascript" src="js/httpRequest.js"></script>
-<script type="text/javascript"
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	
+
+<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=4sz4wcsnub"></script>
+
 </head>
 <body style="height: 100%">
 	<div class="wrapper">
@@ -28,9 +27,9 @@
 		<div class="container">
 		<!-- 여기 하단으로 -->
 			<div class="main_title">
-				<div id="img1"><img alt="" src="img/host/${info.detimg1 }"> </div>
-				<div id="img2"><img alt="" src="img/host/${info.detimg2 }"> </div>
-				<div id="img3"><img alt="" src="img/host/${info.detimg3 }"> </div>
+				<div class="imgu"><img alt="" src="img/host/${info.detimg1 }"> </div>
+				<div class="imgu"><img alt="" src="img/host/${info.detimg2 }"> </div>
+				<div class="imgu"><img alt="" src="img/host/${info.detimg3 }"> </div>
 			</div>	
 			<div class="main_left_btn">
 				<div class="region">
@@ -156,7 +155,14 @@
 				 </div>
 				 <div class="map_wrap">map
 				 	<div id="map">
-				 		
+				 		<script>
+							var mapOptions = {
+							    center: new naver.maps.LatLng(37.3595704, 127.105399),
+							    zoom: 10
+							};
+							
+							var map = new naver.maps.Map('map', mapOptions);
+						</script>
 				 	</div>
 				 </div>
 				 <div class="cal_wrap">calender
