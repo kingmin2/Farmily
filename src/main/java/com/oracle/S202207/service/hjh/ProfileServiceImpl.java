@@ -13,11 +13,8 @@ public class ProfileServiceImpl implements ProfileService {
 	private ProfileDao pd;
 	
 	@Override
-	public Member loginCheck(Member member, HttpSession session) {
+	public Member loginCheck(Member member) {
 		member = pd.loginCheck(member);
-		if(member != null) {
-			session.setAttribute("userno", member.getUserno());
-		}
 		return member;
 	}
 

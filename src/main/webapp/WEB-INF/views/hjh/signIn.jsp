@@ -17,7 +17,7 @@
 				<div class="titleFrame">
 					<h1 class="signInTitle">FARMily</h1>
 				</div>
-				<form action="loginCheck" name="loginForm" id="loginForm" method="post">
+				<form action="">
 					<div class="IDFrame">
 						<label class="form-label" for="id">ID</label>
 						<input id="id" class="ember-text-field ember-view form-control" required="" name="id" type="text">
@@ -26,7 +26,7 @@
 						<label class="form-label" for="passwd">비밀번호</label>
 						<input id="passwd" class="ember-text-field ember-view form-control" required="" name="passwd" type="password">
 					</div>
-					<button class="btn text-white" id="btnSignIn" type="submit" onclick="loginCheck">로그인</button>
+					<button class="btn text-white" id="btnSignIn" onclick="loginCheck()">로그인</button>
 				</form>
 				<button class="btn text-white" id="btnSignIn">회원가입</button>
 				<div class="findAccount">
@@ -38,19 +38,19 @@
 	<jsp:include page="/WEB-INF/views/main/footer.jsp"></jsp:include>
 	</div>
 	<script type="text/javascript">
-/* 		function loginCheck() {
-			let formData = $("#loginForm").serialize();
+ 		function loginCheck() {
+ 			let id = $('#id').val();
+ 			let passwd = $('#passwd').val();
+ 			let form = $("form").serialize();
 			$ajax(
 					{
-						url:"loginCheck",
-						data:{formData : formData},
-						
-						success:function() {
-							
-						}						
+						type : 'POST',
+						url : 'loginCheck',
+						data : {member : form},
+						success : alert("에러발생");
 					}		
 			)
-		} */
+		}
 	</script>
 </body>
 </html>
