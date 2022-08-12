@@ -3,6 +3,7 @@ package com.oracle.S202207.controller.kjh;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,7 +39,7 @@ public class HostViewApiController {
 	// 전체 리스트 클러스터용
 	@SuppressWarnings("unchecked")
 	@GetMapping("/restApi/hostList")
-	public Result hostList() {
+	public Result hostList(Model model) {
 		System.out.println("HostViewApiController hostList Starts...");
 		List<Host> hostList=js.hostList();
 		
@@ -46,7 +47,9 @@ public class HostViewApiController {
 									.map(m-> new HostMap(m.getLat(), m.getLng()))
 									.collect(Collectors.toList());
 		
-		return new Result(hostListMap);
+		Result result=new Result(hostListMap);
+		
+		return result;
 	}
 	
 	// 특정 농장 번호 
