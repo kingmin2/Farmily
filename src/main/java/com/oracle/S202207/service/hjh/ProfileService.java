@@ -6,6 +6,6 @@ import com.oracle.S202207.model.hjh.Member;
 
 public interface ProfileService {
 
-	Member loginCheck(Member member, HttpSession session);
+	Member loginCheck(Member member);
 
 }
