@@ -73,6 +73,7 @@
 									<div id="wish">
 										<button class="btnwish"><img alt="" src="img/emptyheart.png"></button>
 									</div>
+									<input type="hidden" onclick="href='restApi/hostDetail?farmno=${list.farmno }'">
 								</li>
 							</c:forEach>
 						</ul>
@@ -104,21 +105,45 @@
 				    		console.log(data);
 				    		console.log(data.length);
 				    		
-						    var markers = [];
+						    var markers = []; // 마커 정보
+						    let infoWindows= []; // 정보창 배열 
 						    
 						    for (var i = 0, ii = data.length; i < ii; i++) {
 						        var spot = data[i],
-						            latlng = new naver.maps.LatLng(spot.lat, spot.lng),
+						        	infoWindow = new naver.maps.InfoWindow({
+							        content: '<div style="width:200px;text-align:center;padding:10px;"><b><a href="HostDetail?farmno='+spot.farmno+'">'+spot.shortintro+'</a></b></div>'
+							 		}); // 클릭했을 때 띄워줄 정보 입력
+						            
+							 		
+							 		latlng = new naver.maps.LatLng(spot.lat, spot.lng),
 						            marker = new naver.maps.Marker({
 						                position: latlng,
 						                draggable: true
 						            });
-
+								
 						        markers.push(marker);
+						        infoWindows.push(infoWindow); 
 						    }
 						    
-						    
-						    
+						    function getClickHandler(seq) {
+								
+					            return function(e) {  // 마커를 클릭하는 부분
+					                var marker = markers[seq], // 클릭한 마커의 시퀀스로 찾는다.
+					                    infoWindow = infoWindows[seq]; // 클릭한 마커의 시퀀스로 찾는다
+
+					                if (infoWindow.getMap()) {
+					                    infoWindow.close();
+					                } else {
+					                    infoWindow.open(map, marker); // 표출
+					                }
+					    		}
+					    	}
+					    
+						    for (var i=0, ii=markers.length; i<ii; i++) {
+						    	console.log(markers[i] , getClickHandler(i));
+						        naver.maps.Event.addListener(markers[i], 'click', getClickHandler(i)); // 클릭한 마커 핸들러
+						    	}
+													    
 						    var htmlMarker1 = {
 						            content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(/img/cluster-marker-1.png);background-size:contain;"></div>',
 						            size: N.Size(40, 40),
@@ -164,7 +189,8 @@
 				    };
 				    
 				    getData();
-
+				    
+				    
 				</script>
 			</div> 
 		<!-- 여기 상단으로 -->

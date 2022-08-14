@@ -155,14 +155,7 @@
 				 </div>
 				 <div class="map_wrap">map
 				 	<div id="map">
-				 		<script>
-							var mapOptions = {
-							    center: new naver.maps.LatLng(37.3595704, 127.105399),
-							    zoom: 10
-							};
-							
-							var map = new naver.maps.Map('map', mapOptions);
-						</script>
+				 		<img src="https://naveropenapi.apigw.ntruss.com/map-static/v2/raster-cors?w=300&h=300&center=${info.lng},${info.lat}&X-NCP-APIGW-API-KEY-ID={4sz4wcsnub}"/>
 				 	</div>
 				 </div>
 				 <div class="cal_wrap">calender
