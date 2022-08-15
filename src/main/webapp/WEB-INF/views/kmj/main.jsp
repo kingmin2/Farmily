@@ -15,6 +15,7 @@
 		<!-- 여기 하단으로 -->
 			<div class="row">
 				<img alt="" class="mainImg" src="img/farm.jpg">
+				<a href="/chat">채팅으로 연결</a>
 			</div>
 		
 		<!-- 여기 상단으로 -->

@@ -1,4 +1,4 @@
-package com.oracle.S202207.model;
+package com.oracle.S202207.domain.kmj;
 
 import java.util.Date;
 
@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Message {
+public class D_Message {
 	private int roomno;
 	private int msg_num;
 	private int msg_type;
