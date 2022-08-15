@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.oracle.S202207.model.hjh.Member;
 import com.oracle.S202207.service.hjh.ProfileService;
@@ -24,11 +25,19 @@ public class ProfileController {
 	public String SignIn() {
 		return "hjh/signIn";
 	}
-
+	
+	@ResponseBody
 	@PostMapping(value = "loginCheck")
 	public String loginCheck(Member member, HttpSession session, HttpServletRequest request) {
-		member = ps.loginCheck(member, session);
-		return "kmj/main";
+		member = ps.loginCheck(member);
+		System.out.println("member는?????"+member);
+		if (member != null) {
+			session = request.getSession();
+			session.setAttribute("userno", member.getUserno());
+			return "kmj/main";
+		} else {
+			return "redirect:hjh/signIn";
+		}
 	}
 
 

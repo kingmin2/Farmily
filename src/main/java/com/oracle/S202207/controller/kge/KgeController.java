@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.oracle.S202207.domain.kge.Question;
 import com.oracle.S202207.service.kge.KgeService;
@@ -35,8 +36,18 @@ public class KgeController {
 //		question.setUserno(userno);
 		List<Question> questionList = kgeService.getListAllQuestion(userno);
 		System.out.println("questionList.size() -->"+questionList.size());
+		System.out.println("questionList.name() -->"+questionList.get(0).getMember().getName());
 		model.addAttribute("questions", questionList);
 		return "kge/questionList";
 	}
+	
+	
+	// 1:1 게시판 작성하기
+	@GetMapping(value = "QuestionWriteForm")
+	public String questionWriteForm() {
+		System.out.println("[KgeController] questionWriteForm Start..");
+		return "kge/questionWrite";
+	}
+	 
 
-}
+	}

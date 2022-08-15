@@ -15,10 +15,10 @@ import com.oracle.S202207.domain.kjh.Res;
 import com.oracle.S202207.domain.kjh.Rev;
 
 @Repository
-public class KjhRepositoryImpl implements KjhRepository {
+public class HostViewRepositoryImpl implements HostViewRepository {
 	private final EntityManager em;
 	
-	public KjhRepositoryImpl(EntityManager em) {
+	public HostViewRepositoryImpl(EntityManager em) {
 		this.em=em;
 	}
 

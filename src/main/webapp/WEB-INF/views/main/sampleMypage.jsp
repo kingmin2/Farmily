@@ -8,6 +8,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>마이페이지</title>
 <link href="css/kmj/main.css" rel="stylesheet" type="text/css">
+<link href="css/kmj/footer.css" rel="stylesheet" type="text/css">
+<link href="css/kmj/header.css" rel="stylesheet" type="text/css">
+<link href="css/kmj/myPage.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div class="wrapper">

@@ -32,7 +32,7 @@
           style="background-image: url(images/bg_1.jpg)"
         >
           <div class="user-logo">
-         	 <a class="navbar-brand-admin" id="home" href="#">FARMily</a>
+         	 <a class="navbar-brand-admin" id="home" href="admin">FARMily</a>
             <!-- <div
               class="img"
               style="background-image: url(images/logo.jpg)"
@@ -42,10 +42,10 @@
         </div>
         <ul class="list-unstyled components mb-5">
           <li class="active">
-            <a href="#"><span class="fa fa-home mr-3"></span> 회원 정보</a>
+            <a href="admin/users"><span class="fa fa-home mr-3"></span> 회원 정보</a>
           </li>
           <li>
-            <a href="#"
+            <a href="admin/farms"
               ><span class="fa fa-download mr-3 notif"
                 ><small class="d-flex align-items-center justify-content-center"
                   >5</small
@@ -55,13 +55,13 @@
             >
           </li>
           <li>
-            <a href="#"><span class="fa fa-gift mr-3"></span> 공지 사항</a>
+            <a href="admin/notice"><span class="fa fa-gift mr-3"></span> 공지 사항</a>
           </li>
           <li>
-            <a href="#"><span class="fa fa-trophy mr-3"></span> 1:1문의</a>
+            <a href="admin/ask"><span class="fa fa-trophy mr-3"></span> 1:1문의</a>
           </li>
           <li>
-            <a href="#"><span class="fa fa-sign-out mr-3"></span> 로그아웃</a>
+            <a href="#" onclick="logout()"><span class="fa fa-sign-out mr-3"></span> 로그아웃</a>
           </li>
         </ul>
       </nav>
@@ -69,6 +69,35 @@
       <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
       
+      <div class="col-md-8 mx-auto">
+      
+      <h1>안녕하세요 관리자페이지입니다.</h1>
+      
+      
+      <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <span>회원관리</span>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <span>농장관리</span>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <span>공지사항</span>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <span>1:1문의</span>
+      </div>
+    </div>
+  </div>
+      
+      </div>
       
       </div>
     </div>

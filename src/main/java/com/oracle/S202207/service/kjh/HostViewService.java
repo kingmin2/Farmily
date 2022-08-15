@@ -1,23 +1,22 @@
 package com.oracle.S202207.service.kjh;
 
-import java.util.Collections;
 import java.util.List;
 
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
-import com.oracle.S202207.dao.kjh.KjhRepository;
+import com.oracle.S202207.dao.kjh.HostViewRepository;
 import com.oracle.S202207.domain.kjh.Host;
 import com.oracle.S202207.domain.kjh.Res;
 import com.oracle.S202207.domain.kjh.Rev;
 
 @Service
 @Transactional
-public class KjhService {
-	private final KjhRepository jr;
+public class HostViewService {
+	private final HostViewRepository jr;
 	
-	public KjhService(KjhRepository jr) {
+	public HostViewService(HostViewRepository jr) {
 		this.jr=jr;
 	}
 
