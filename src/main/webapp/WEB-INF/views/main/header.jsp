@@ -23,7 +23,6 @@
 <!-- <script type="text/javascript" src="js/*"></script> -->
 <script src="js/jquery.js"></script>
 <script type="text/javascript" src="js/httpRequest.js"></script>
->>>>>>> branch ''master'' of https://github.com/kingmin2/farmily.git
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
