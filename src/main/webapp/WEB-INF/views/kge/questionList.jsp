@@ -15,6 +15,12 @@
 		<jsp:include page="/WEB-INF/views/main/myPageInclude.jsp"></jsp:include>
 		<!-- 여기 하단으로 -->
 		
+				<h1>1:1 문의하기</h1>
+		
+				<div class="d-grid gap-2 d-md-block">
+				  <button class="btn btn-primary" type="button" onclick="location.href='QuestionWriteForm' id="q_write">작성하기</button>
+				</div>
+				
 				<table class="table table-striped">
 				  <thead id="table_header">
 				    <tr>
@@ -33,7 +39,16 @@
 						      <td class="q_List">${question.q_subject}</td>
 						      <td class="q_List">${question.member.name}</td> <!-- foreign key로 연결된 member 객체의 name값을 가져오기 -->
 						      <td class="q_List">${question.q_date}</td>
-						      <td class="q_List">${question.q_status}</td>
+						      
+							      <c:choose>
+									    <c:when test="${question.q_status==0}">
+									   		<td class="q_List">확인중</td>
+									    </c:when>
+									    <c:otherwise>
+											 <td class="q_List">답변 완료</td>
+									    </c:otherwise>
+								  </c:choose>
+						      
 						    </tr>
 						  </tbody>
 					  </c:forEach>
