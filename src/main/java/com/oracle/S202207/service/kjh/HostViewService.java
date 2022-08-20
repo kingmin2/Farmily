@@ -10,6 +10,7 @@ import com.oracle.S202207.dao.kjh.HostViewRepository;
 import com.oracle.S202207.domain.kjh.Host;
 import com.oracle.S202207.domain.kjh.Res;
 import com.oracle.S202207.domain.kjh.Rev;
+import com.oracle.S202207.domain.kjh.Wishlist;
 
 @Service
 @Transactional
@@ -69,6 +70,14 @@ public class HostViewService {
 		
 		
 		return hostList;
+	}
+
+	// 호스트 리스트 위시리스트 
+	public List<Wishlist> findWish(int userno) {
+		System.out.println("KjhService findWish Starts...");
+		List<Wishlist> wishlist=jr.findWish(userno);
+		System.out.println("KjhService findWish Ends...");
+		return wishlist;
 	}
 
 
