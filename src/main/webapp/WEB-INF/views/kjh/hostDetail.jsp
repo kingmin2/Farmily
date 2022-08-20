@@ -2,10 +2,14 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Calendar"%>
+
     
 <%
 	String context = request.getContextPath();
-%>    
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,8 +21,9 @@
 <link href="css/kmj/footer.css" rel="stylesheet" type="text/css">
 
 <script type="text/javascript" src="js/httpRequest.js"></script>
-
 <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=4sz4wcsnub"></script>
+<script type="text/javascript" src="js/kjh/calendar.js"></script>
+
 
 </head>
 <body style="height: 100%">
@@ -153,15 +158,56 @@
 						<button>우핑 신청하기</button>
 					</c:if>
 				 </div>
-				 <div class="map_wrap">map
+				 <div class="map_wrap">
 				 	<div id="map">
-				 		<img src="https://naveropenapi.apigw.ntruss.com/map-static/v2/raster-cors?w=300&h=300&center=${info.lng},${info.lat}&X-NCP-APIGW-API-KEY-ID={4sz4wcsnub}"/>
+					 	<script>
+						    var farmno=${info.farmno};
+						    var lat=${info.lat};
+						    var lng=${info.lng};
+						
+						    var map = new naver.maps.Map('map', {
+						        center: new naver.maps.LatLng(lat, lng),
+						        zoom: 12,
+						        minZoom: 10,
+						        maxZoom: 13
+						    });
+						    
+						    const getData=()=>{
+					            latlng = new naver.maps.LatLng(lat, lng),	
+					            marker = new naver.maps.Marker({
+					                position: latlng,
+					                map: map
+					            })
+						    };
+						
+						    getData();
+						</script>
 				 	</div>
 				 </div>
-				 <div class="cal_wrap">calender
-				 	<div id="cal">
-				 	
-				 	</div>				 
+				 <div class="cal_wrap">
+				 	<div class="calendar">
+					    <div class="headerp">
+					      <div class="year-month"></div>
+					      <div class="nav">
+					        <button class="nav-btn go-prev" onclick="prevMonth()">&lt;</button>
+					        <button class="nav-btn go-today" onclick="goToday()">Today</button>
+					        <button class="nav-btn go-next" onclick="nextMonth()">&gt;</button>
+					      </div>
+					    </div>
+					    <div class="main">
+					      <div class="days">
+					        <div class="day">일</div>
+					        <div class="day">월</div>
+					        <div class="day">화</div>
+					        <div class="day">수</div>
+					        <div class="day">목</div>
+					        <div class="day">금</div>
+					        <div class="day">토</div>
+					      </div>
+					      <div class="dates"></div>
+					    </div>
+					  </div>
+					  <script src="js/kjh/index.js"></script>
 				 </div>
 			 </div>
 		<!-- 여기 상단으로 -->

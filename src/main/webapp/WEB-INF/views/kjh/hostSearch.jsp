@@ -65,15 +65,37 @@
 							<c:forEach var="list" items="${hostList }" varStatus="status">
 								<li class="listhost">
 									<div id="thmimg" >
-										<img alt="" src="img/host/${list.thmimg }">
+										<a href="HostDetail?farmno=${list.farmno }"><img alt="" src="img/host/${list.thmimg }"></a>
 									</div>
 									<div id="shortintro">
 										<a href="HostDetail?farmno=${list.farmno }">${list.shortintro }</a>
 									</div>
-									<div id="wish">
-										<button class="btnwish"><img alt="" src="img/emptyheart.png"></button>
+									<div id="wish" tabindex="">
+										<c:choose>
+											<c:when test="${empty userno || userno==null}">
+												<button class="btnwish" onclick="mchk();"><img alt="" src="img/emptyheart.png"></button>
+													<script type="text/javascript">
+														function mchk(){
+															alert("회원가입 후 이용할 수 있습니다");
+														}
+													</script>
+											</c:when>
+											<c:when test="${not empty userno }">
+												<script type="text/javascript">
+													var farmno=${list.farmno };
+													var farmno1=${wish.farmno};
+												</script>
+												<c:set var="loop" value="false"/>
+												<c:forEach var="wish" items="${wishlist }">
+													<c:if test="${list.farmno==wish.farmno }">
+														<button class="btnwish"><img alt="" src="img/fillheart.png"></button>
+														<c:set var="loop" value="true"/>
+													</c:if>
+												</c:forEach>
+										
+											</c:when>
+											</c:choose>
 									</div>
-									<input type="hidden" onclick="href='restApi/hostDetail?farmno=${list.farmno }'">
 								</li>
 							</c:forEach>
 						</ul>
@@ -85,6 +107,7 @@
 					<script>
 					var map = new naver.maps.Map("map", {
 				        zoom: 6,
+				        maxZoom: 13,
 				        center: new naver.maps.LatLng(36.2253017, 127.6460516),
 				        zoomControl: true,
 				        zoomControlOptions: {
