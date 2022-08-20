@@ -14,7 +14,8 @@
 		<div class="container">
 		<jsp:include page="/WEB-INF/views/main/myPageInclude.jsp"></jsp:include>
 		<!-- 여기 하단으로 -->
-		
+		<div class="container">
+			<div class="row">
 				<h1>1:1 문의하기</h1>
 		
 				<div class="d-grid gap-2 d-md-block">
@@ -53,13 +54,20 @@
 						  </tbody>
 					  </c:forEach>
 				  </c:if>
-				  <div id="testResult">
+				  
 		         <c:if test="${empty questions}">
-		            - 문의한 내역이 없습니다 -
+		         <tbody>
+		         <tr>
+		         <td colspan="5">- 문의한 내역이 없습니다 -</td>
+		         </tr>
+		         </tbody>
+		            
 		         </c:if>
-		         </div>
+		         
+		         
 		</table>
-	
+		</div>
+		</div>
 		<!-- 여기 상단으로 -->
 		</div>
 	<jsp:include page="/WEB-INF/views/main/footer.jsp"></jsp:include>
