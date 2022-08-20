@@ -30,7 +30,6 @@ public class ProfileController {
 	@PostMapping(value = "loginCheck")
 	public String loginCheck(Member member, HttpSession session, HttpServletRequest request) {
 		member = ps.loginCheck(member);
-		System.out.println("member는?????"+member);
 		if (member != null) {
 			session = request.getSession();
 			session.setAttribute("userno", member.getUserno());
@@ -39,6 +38,5 @@ public class ProfileController {
 			return "redirect:hjh/signIn";
 		}
 	}
-
 
 }

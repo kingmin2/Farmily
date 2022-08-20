@@ -13,6 +13,7 @@ import com.oracle.S202207.domain.kjh.Host;
 import com.oracle.S202207.domain.kjh.Member;
 import com.oracle.S202207.domain.kjh.Res;
 import com.oracle.S202207.domain.kjh.Rev;
+import com.oracle.S202207.domain.kjh.Wishlist;
 
 @Repository
 public class HostViewRepositoryImpl implements HostViewRepository {
@@ -31,6 +32,18 @@ public class HostViewRepositoryImpl implements HostViewRepository {
 		return hosts;
 	}
 
+	// 호스트 리스트 위시리스트 
+	@Override
+	public List<Wishlist> findWish(int userno) {
+		System.out.println("KjhRepositoryImpl findWish Starts...");
+		List<Wishlist> wishlist=em.createQuery("SELECT w  FROM Wishlist w WHERE w.userno="+userno, Wishlist.class).getResultList();
+		System.out.println("wishlist query"+wishlist);
+		if(wishlist.isEmpty()) {
+			Collections.emptyList();
+		}
+		
+		return wishlist;
+	}
 
 	// 호스트 상세보기 
 	@Override
@@ -102,5 +115,6 @@ public class HostViewRepositoryImpl implements HostViewRepository {
 		
 		return hostList;
 	}
+
 
 }

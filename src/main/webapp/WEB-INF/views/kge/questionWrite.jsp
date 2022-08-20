@@ -31,7 +31,7 @@
 				
 				<div class="input-group mb-3">
 				  <span class="input-group-text" id="basic-addon2">제목</span>
-				  <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+				  <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2">
 				</div>
 				
 				<div class="input-group">
