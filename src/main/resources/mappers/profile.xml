@@ -3,7 +3,7 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.oracle.S202207.hjhMemberMapper">
-	<select id="hjhLoginCheck" resultType="Member">
+	<select id="hjhLoginCheck" parameterType="Member" resultType="Member">
 		SELECT * FROM MEMBER WHERE id = #{id} AND passwd = #{passwd}
 	</select>
 </mapper>

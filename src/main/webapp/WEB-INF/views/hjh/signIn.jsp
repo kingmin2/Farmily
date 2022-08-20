@@ -7,6 +7,23 @@
 <title>Farmily</title>
 <link href="css/kmj/main.css" rel="stylesheet" type="text/css">
 <link href="css/hjh/profile.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+	function loginCheck() {
+ 		let id = $('#id').val();
+		let passwd = $('#passwd').val();
+		/*let Member = $('form').serialize();*/
+	 	$.ajax(
+			{
+				type : 'POST',
+				url : '/loginCheck',
+				data : {id : id, passwd : passwd}
+				
+			
+				/*success : alert("에러발생");*/
+			}		
+		)
+	}
+</script>
 </head>
 <body>
 	<div class="wrapper">
@@ -37,20 +54,5 @@
 		</div>
 	<jsp:include page="/WEB-INF/views/main/footer.jsp"></jsp:include>
 	</div>
-	<script type="text/javascript">
- 		function loginCheck() {
- 			let id = $('#id').val();
- 			let passwd = $('#passwd').val();
- 			let form = $("form").serialize();
-			$ajax(
-					{
-						type : 'POST',
-						url : 'loginCheck',
-						data : {member : form},
-						success : alert("에러발생");
-					}		
-			)
-		}
-	</script>
 </body>
 </html>
