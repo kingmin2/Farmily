@@ -29,7 +29,6 @@ public class ProfileController {
 	@ResponseBody
 	@PostMapping(value = "loginCheck")
 	public String loginCheck(Member member, HttpSession session, HttpServletRequest request) {
-		System.out.println("member는?????"+member.getPasswd());
 		member = ps.loginCheck(member);
 		if (member != null) {
 			session = request.getSession();
