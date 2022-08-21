@@ -18,4 +18,22 @@ public class MainController {
 		
 		return "kmj/main";
 	}
+	
+	@RequestMapping(value = "membership")
+	public String Membership(Model model) {
+		
+		System.out.println("membership controller start");
+		
+		return "kmj/membership";
+	}
+	
+	@RequestMapping(value = "payment")
+	public String Payment(Model model, int pay) {
+		
+		String userno = "1";
+		System.out.println("payment controller start");
+ 
+		
+		return "kmj/payment";
+	}
 }
