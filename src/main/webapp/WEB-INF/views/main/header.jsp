@@ -27,14 +27,18 @@
 <header id="FarmilyHeader">
 	<nav class="navbar navbar-expand-lg navbar-light">
   		<div class="container-fluid">
-    		<a class="navbar-brand" id="home" href="#">FARMily</a>
+  			<b>
+  				<a class="navbar-brand" id="home" href="main">FARMily</a>
+  			</b>
    	 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       			<span class="navbar-toggler-icon"></span>
     		</button>
     		<div class="collapse navbar-collapse" id="navbarSupportedContent">
       			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
         			<li class="nav-item">
-          				<a class="nav-link active" aria-current="page" href="HostSearch" id="hostSearch">호스트 찾기</a>
+          				<b>
+          					<a class="nav-link active" aria-current="page" href="HostSearch" id="hostSearch">호스트 찾기</a>
+          				</b>
 			        </li>
 			    </ul>
       			<form class="d-flex">
@@ -48,10 +52,17 @@
 				  					<a><i class="fas fa-envelope"></i></a>
 				  				</li>
 				  				<li class="mplist">
-				  					<a href="myPage">마이페이지</a>
+				  					<b>
+				  						<a href="myPage">마이페이지</a>
+				  					</b>
 				  				</li>
 				  				<li>
-				  					<a href="signIn" class="signIn">로그인</a>
+				  					<c:if test="${userno==null}">
+				  						<a href="signIn" class="signIn">로그인</a>
+				  					</c:if>
+				  					<c:if test="${userno!=null}">
+				  						<a href="" class="signIn">로그아웃</a>
+				  					</c:if>
 				  				</li>
 				  			</ul>
 	  					</div>
