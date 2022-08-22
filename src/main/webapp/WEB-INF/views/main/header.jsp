@@ -58,10 +58,10 @@
 				  				</li>
 				  				<li>
 				  					<c:if test="${userno==null}">
-				  						<a href="signIn" class="signIn">로그인</a>
+				  						<a href="signIn" class="signBtn">로그인</a>
 				  					</c:if>
 				  					<c:if test="${userno!=null}">
-				  						<a href="" class="signIn">로그아웃</a>
+				  						<a href="signOut" class="signBtn">로그아웃</a>
 				  					</c:if>
 				  				</li>
 				  			</ul>

@@ -36,5 +36,11 @@ public class ProfileController {
 		}
 		return "kmj/main";
 	}
+	
+	@GetMapping(value = "signOut")
+	public String signOut(HttpSession session) {
+		ps.signOut(session);
+		return "hjh/signIn";
+	}
 
 }

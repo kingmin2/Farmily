@@ -43,7 +43,7 @@
 	cursor: pointer;
 }
 
-.signIn {
+.signBtn {
 	background-color: #f5821f;
 	padding: 8px 12px;
     border-radius: 11px;
@@ -55,6 +55,6 @@
 	color: #613d1a;
 }
 
-.signIn:hover {
+.signBtn:hover {
 	color: white;
 }
