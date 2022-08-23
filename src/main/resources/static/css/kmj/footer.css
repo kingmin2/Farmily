@@ -6,4 +6,31 @@
 	overflow: hidden;
 	bottom: 0;
 	width: 100%;
+	padding: 20px 0px;
+}
+
+.contents {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#footerHome {
+	font-family: 'Mochiy Pop One', sans-serif;
+	font-size: 20px;
+	color: #528a36;
+}
+
+#FarmilyFooter h2 {
+    font-size: 15px;
+}
+
+.noticeBtn {
+	cursor: pointer;
+	text-decoration: none;
+	color: #613d1a;
+}
+
+.noticeBtn:hover {
+	color: #613d1a;
 }

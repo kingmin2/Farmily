@@ -26,17 +26,21 @@ public class ProfileController {
 		return "hjh/signIn";
 	}
 	
-	@ResponseBody
 	@PostMapping(value = "loginCheck")
 	public String loginCheck(Member member, HttpSession session, HttpServletRequest request) {
 		member = ps.loginCheck(member);
 		if (member != null) {
 			session = request.getSession();
 			session.setAttribute("userno", member.getUserno());
-			return "kmj/main";
-		} else {
-			return "redirect:hjh/signIn";
+			
 		}
+		return "kmj/main";
+	}
+	
+	@GetMapping(value = "signOut")
+	public String signOut(HttpSession session) {
+		ps.signOut(session);
+		return "hjh/signIn";
 	}
 
 }
