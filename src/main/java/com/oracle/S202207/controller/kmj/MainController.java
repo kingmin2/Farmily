@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.oracle.S202207.model.kmj.Membership;
 @Controller
 public class MainController {
 
@@ -32,7 +33,11 @@ public class MainController {
 		
 		String userno = "1";
 		System.out.println("payment controller start");
- 
+		Membership membership = new Membership();
+		membership.setUserno(1);
+		membership.setPayno(pay);
+		
+		model.addAttribute("membership", membership);
 		
 		return "kmj/payment";
 	}
