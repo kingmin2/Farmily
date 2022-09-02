@@ -22,13 +22,13 @@
 		<div class="container">
 			<jsp:include page="/WEB-INF/views/main/myPageInclude.jsp"></jsp:include>
 			<!-- 여기 하단으로 -->
-			<input type="hidden" id="userno" value="${userno }">
-			<input type="hidden" id="payno" value="${payno }">
+			<input type="hidden" name="userno" id="userno" value="${userno }">
 			<table>
 				<tr>
-					<td class="payment4">결제방법</td> 
-                    <td class="payment4-1">카카오페이<input type="radio" name="pay" id="kakao" value="Kakaopay"><br></td>
-                    <td class="payment4-2">토스<input type="radio" name="pay" id="toss" value="Toss"></td>
+					<td class="payment">결제방법</td> 
+                    <td class="payment-1">카카오페이<input type="radio" name="pay" id="kakao" value="Kakaopay"><br></td>
+                    <td class="payment-2">토스<input type="radio" name="pay" id="toss" value="Toss"></td>
+            		<td class="payment-3">페이코<input type="radio" name="pay" id="payco" value="Payco"></td>
             	</tr>
             </table>  
 			<button type="button" id="paybtn" onclick="checkButton()"> 결제하기 </button>
@@ -42,6 +42,8 @@
         	payBy = 'kakaopay'
     	} else if(document.getElementById('toss').checked) {   
     		payBy = 'tosspay'     
+    	} else if(document.getElementById('payco').checked) {   
+    		payBy = 'payco'     
     	}
      	
     	const btn2 = document.querySelector('#paybtn');        
@@ -70,15 +72,24 @@
      	}, function (rsp) {
         	console.log(rsp);
 	     	if (rsp.success) {
-	        	var msg = '결제가 완료되었습니다.';
+	     		
+	        	var msg = '결제가 완료되었습니다.';        	
 	        	msg += '결제 금액 : ' + rsp.paid_amount;
-	     
+	        	alert(msg);
+	        	goPage();
+	        	
 			} else {
         		var msg = '결제에 실패하였습니다.';
         		msg += '에러내용 : ' + rsp.error_msg;
+        		alert(msg);
      		}
-     		alert(msg);
+     		
   		});
+	}
+	
+	function goPage() {
+		var userno = $("#userno").val();
+		location.href="membershipInfo?userno="+userno;
 	}
 </script>
 </body>

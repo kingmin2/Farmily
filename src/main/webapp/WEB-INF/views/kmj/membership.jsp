@@ -15,7 +15,7 @@
 	<jsp:include page="/WEB-INF/views/main/header.jsp"></jsp:include>
 		<div class="container">
 		<jsp:include page="/WEB-INF/views/main/myPageInclude.jsp"></jsp:include>
-		<input type="hidden" id="userno" value="${userno }">
+ 
 		<!-- 여기 하단으로 -->
 		<div class="row">
 			<div class="col">
@@ -32,24 +32,6 @@
 	      <div class="col">
 	        <div class="card mb-4">
 	          <div class="card-header py-3">
-	            <h4 class="my-0 fw-normal">Year</h4>
-	          </div>
-	          <div class="card-body">
-	            <h1 class="card-title pricing-card-title">100,000<small class="text-muted fw-light">/원</small></h1>
-	            <ul class="list-unstyled mt-3 mb-4">
-	              <li>farmily</li>
-	              <li>..</li>
-	              <li>..</li>
-	              <li>..</li>
-	            </ul>
-	            <!-- value 12: year -->
-	            <button type="button" class="w-100 btn btn-lg btn-outline-primary" onclick="location.href='payment?payno=12'">Get started</button>
-	          </div>
-	        </div>
-	      </div>
-	      <div class="col">
-	        <div class="card mb-4">
-	          <div class="card-header py-3">
 	            <h4 class="my-0 fw-normal">Month</h4>
 	          </div>
 	          <div class="card-body">
@@ -61,7 +43,7 @@
 	              <li>..</li>
 	            </ul>
 	            <!-- value 1: month -->
-	            <button type="button" class="w-100 btn btn-lg btn-outline-primary" onclick="location.href='payment?payno=1'">Get started</button>
+	            <button type="button" class="w-100 btn btn-lg btn-outline-primary" onclick="location.href='payment?userno=${member.userno}'">Get started</button>
 	          </div>
 	        </div>
 	      </div>

@@ -10,8 +10,6 @@ import lombok.Setter;
 public class Membership {
 	private int memno;
 	private int userno;
-	private Date paystart;
-	private Date payend;
-	
-	private int payno;
+	private String paystart;
+	private String payend;
 }
