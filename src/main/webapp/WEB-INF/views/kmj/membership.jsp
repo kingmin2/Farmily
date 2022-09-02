@@ -43,7 +43,7 @@
 	              <li>..</li>
 	            </ul>
 	            <!-- value 12: year -->
-	            <button type="button" class="w-100 btn btn-lg btn-outline-primary" onclick="location.href='payment?pay=12'">Get started</button>
+	            <button type="button" class="w-100 btn btn-lg btn-outline-primary" onclick="location.href='payment?payno=12'">Get started</button>
 	          </div>
 	        </div>
 	      </div>
@@ -61,7 +61,7 @@
 	              <li>..</li>
 	            </ul>
 	            <!-- value 1: month -->
-	            <button type="button" class="w-100 btn btn-lg btn-outline-primary" onclick="location.href='payment?pay=1'">Get started</button>
+	            <button type="button" class="w-100 btn btn-lg btn-outline-primary" onclick="location.href='payment?payno=1'">Get started</button>
 	          </div>
 	        </div>
 	      </div>
