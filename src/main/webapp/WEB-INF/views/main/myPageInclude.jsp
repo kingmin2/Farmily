@@ -8,12 +8,10 @@
 <meta charset="UTF-8">
 <link href="css/kjh/myPage.css" rel="stylesheet" type="text/css">
 <style type="text/css">
-
-.container{
-	margin-left: 0px;
-    padding-left: 0px;
-}
-
+	.container{
+		margin-left: 0px;
+	    padding-left: 0px;
+	}
 </style>
 <title>Insert title here</title>
 </head>
