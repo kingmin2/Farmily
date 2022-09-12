@@ -1,12 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<% 
+   String context = request.getContextPath();
+%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>1:1 문의하기</title>
 <link href="css/kmj/main.css" rel="stylesheet" type="text/css">
+
+
 </head>
 <body>
 	<div class="wrapper">
@@ -19,7 +25,7 @@
 				<h1>1:1 문의하기</h1>
 		
 				<div class="d-grid gap-2 d-md-block">
-				  <button class="btn btn-primary" type="button" onclick="location.href='QuestionWriteForm' id="q_write">작성하기</button>
+				  <button class="btn btn-primary" type="button" onclick="getQuestionWriteForm()" id="q_write">작성하기</button>
 				</div>
 				
 				<table class="table table-striped">
@@ -72,5 +78,12 @@
 		</div>
 	<jsp:include page="/WEB-INF/views/main/footer.jsp"></jsp:include>
 	</div>
+	<script type="text/javascript">
+   // 1:1 문의 작성 페이지로 이동
+   function getQuestionWriteForm() {
+	   alert("getQuestionWriteForm start...");
+	   location.href="QuestionWriteForm";
+   }
+</script>
 </body>
 </html>
