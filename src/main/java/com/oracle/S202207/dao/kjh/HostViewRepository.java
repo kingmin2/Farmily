@@ -5,6 +5,7 @@ import java.util.List;
 import com.oracle.S202207.domain.kjh.Host;
 import com.oracle.S202207.domain.kjh.Res;
 import com.oracle.S202207.domain.kjh.Rev;
+import com.oracle.S202207.domain.kjh.Wishlist;
 
 public interface HostViewRepository {
 
@@ -19,6 +20,8 @@ public interface HostViewRepository {
 	List<Res> revAuthchk(int farmno, int userno);
 
 	List<Res> hostSearchOptSubmit(Res res);
+
+	List<Wishlist> findWish(int userno);
 
 
 }

@@ -1,6 +1,9 @@
 package com.oracle.S202207.controller.kjh;
 
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.oracle.S202207.domain.kjh.Host;
 import com.oracle.S202207.domain.kjh.Res;
 import com.oracle.S202207.domain.kjh.Rev;
+import com.oracle.S202207.domain.kjh.Wishlist;
 import com.oracle.S202207.service.kjh.HostViewService;
 
 @Controller
@@ -42,9 +46,21 @@ public class HostViewController {
 	public String hostSearch(Model model) {
 		System.out.println("KjhController HostSearch Starts...");
 		List<Host> hosts=js.hostList();
+		
+		// 위시리스트용 회원번호(세션) 보내야함 
+		int userno=1;
+		System.out.println("KjhController wishlist Starts...");
+		List<Wishlist> wishlist=js.findWish(userno);
+		System.out.println("KjhController wishlist Ends...");
+		System.out.println("wish"+wishlist.get(2).getFarmno()+wishlist.get(3).getFarmno());
+		
 		model.addAttribute("hostList", hosts);
+		model.addAttribute("userno", userno);
+		model.addAttribute("wishlist", wishlist);
+		
 		return "kjh/hostSearch";
 	}
+	
 	
 	// 호스트 리스트 상세 보기 
 	@RequestMapping(value = "HostDetail")
@@ -54,7 +70,6 @@ public class HostViewController {
 		
 		// 호스트 정보
 		Host host=js.hostDetail(farmno);
-		
 		// 상세주소 용 (로그인 세션 잡히면)
 //		String userno=(String)request.getSession().getAttribute("userno"); 
 //		int membership;
@@ -66,13 +81,16 @@ public class HostViewController {
 //			membership=0; 
 //		}
 		
+		
 		// 멤버쉽 여부(상세주소)
-		int userno=6; // 임의로 잡아줬음 로그인 하면 변경이 될 예정 
+		int userno=1; // 임의로 잡아줬음 로그인 하면 변경이 될 예정 
 		int membership=js.memshipchk(userno);
 		System.out.println("KjhController membership"+membership);
 		
+		
 		// 리뷰 작성 권한 (임의로 userno 잡았음)  revAuth (userno가 없는 경우 null로 넘기자. -1 회원가입)
 		List<Res> res=js.revAuthchk(farmno, userno);
+		
 		
 		// 리뷰
 		List<Rev> revList=js.revList(farmno);
@@ -85,12 +103,16 @@ public class HostViewController {
 		return "kjh/hostDetail";
 	}
 	
+	
+	
+	
 	// 호스트 상세 조건 팝업창
 	@RequestMapping(value = "HostSearchOpt")
 	public String hostSearchOpt(Model model) {
 		System.out.println("KjhController HostSearchOpt Starts...");
 		return "kjh/hostSearchOpt";
 	}
+	
 	
 	// 호스트 팝업 필터 검색 
 	@RequestMapping(value = "HostSearchOptSubmit")
