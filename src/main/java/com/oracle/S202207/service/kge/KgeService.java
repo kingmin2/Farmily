@@ -26,5 +26,14 @@ public class KgeService {
 		return listQuestion;
 	}
 
+	// 1:1 게시판 입력한 내용 DB에 저장하기
+	public Question save(Question question) {
+		System.out.println("[KgeService] question.getQ_subject()->"+question.getQ_subject());
+		kgeRepository.save(question);
+		System.out.println("memberRepository.save(member) After");
+		return question;
+		
+	}
+
 
 }
