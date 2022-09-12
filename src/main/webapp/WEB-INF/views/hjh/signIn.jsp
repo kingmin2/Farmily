@@ -47,7 +47,7 @@
 					</div>
 					<button type="submit" class="btn text-white" id="btnSign">로그인</button>
 				</form>
-				<button class="btn text-white" id="btnSign">회원가입</button>
+				<a href="signUp" class="btn text-white" id="btnSign">회원가입</a>
 				<div class="findAccount">
 					<span>ID/비밀번호를 잊어버리셨나요?</span>
 				</div>

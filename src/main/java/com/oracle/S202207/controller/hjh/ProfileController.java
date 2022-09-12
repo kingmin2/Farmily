@@ -22,7 +22,7 @@ public class ProfileController {
 	private ProfileService ps;
 
 	@GetMapping(value = "signIn")
-	public String SignIn() {
+	public String signIn() {
 		return "hjh/signIn";
 	}
 	
@@ -41,6 +41,11 @@ public class ProfileController {
 	public String signOut(HttpSession session) {
 		ps.signOut(session);
 		return "hjh/signIn";
+	}
+	
+	@GetMapping(value = "signUp")
+	public String signUp() {
+		return "hjh/signUp";
 	}
 
 }

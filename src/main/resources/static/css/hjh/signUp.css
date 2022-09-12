@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+.signFrame {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.signUpFrame {
+	width: 600px;
+	border: 2px solid #d2d2d2;
+	border-radius: 20px;	
+	background-color: #fdf9f3;
+	padding: 50px;
+	margin: 50px auto;
+}
+
+.titleFrame {
+	margin-top: 25px;
+	text-align: center;
+	width: 100%;
+}
+
+.signUpTitle {
+	font-family: 'SCoreDream';
+	color: #528a36;
+	font-size: 40px;
+	margin: auto;
+}
+
+.IDFrame {
+	margin-top: 25px;
+}
+
+.pwdFrame {
+	margin-top: 25px;
+}
