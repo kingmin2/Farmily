@@ -4,8 +4,10 @@
 
 <configuration>
 	<typeAliases>
-	  	 <!-- hjh -->
-	  	 <typeAlias alias="Member" type="com.oracle.S202207.model.hjh.Member"/>
+	  	<!-- hjh -->
+		<typeAlias alias="Member" type="com.oracle.S202207.model.hjh.Member"/>
 		
+		<!-- kmj -->
+		<typeAlias alias="Membership" type="com.oracle.S202207.model.kmj.Membership"/>
 	</typeAliases>
 </configuration>
