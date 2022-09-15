@@ -42,12 +42,23 @@ public class KgeController {
 	}
 	
 	
-	// 1:1 게시판 작성하기
+	// 1:1 게시판 작성 페이지로 이동
 	@GetMapping(value = "QuestionWriteForm")
 	public String questionWriteForm() {
 		System.out.println("[KgeController] questionWriteForm Start..");
 		return "kge/questionWrite";
 	}
 	 
+	// 1:1 게시판 입력한 내용 DB에 저장하기
+	@PostMapping(value = "QuestionWrite")
+	public String questionSave(Question question) {
+		System.out.println("[KgeController] questionSave Start..");
+		System.out.println("question.getQ_category()->"+question.getQ_category());
+		System.out.println("question.getQ_subject()->"+question.getQ_subject());
+		kgeService.save(question);
+		System.out.println("[KgeController] saveQuestion(question) After");
+		
+		return "kge/questionList";
+	}
 
 	}

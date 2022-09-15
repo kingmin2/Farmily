@@ -1,4 +1,4 @@
-package com.oracle.S202207.model;
+package com.oracle.S202207.domain.kmj;
 
 import java.util.Date;
 
@@ -12,5 +12,6 @@ public class Membership {
 	private int userno;
 	private Date paystart;
 	private Date payend;
-
+	
+	private int payno;
 }

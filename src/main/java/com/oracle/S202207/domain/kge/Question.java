@@ -1,13 +1,17 @@
 package com.oracle.S202207.domain.kge;
 
-import java.sql.Date;
 
+import java.util.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.SequenceGenerator;
 
 import com.oracle.S202207.domain.kjh.Member;
@@ -38,9 +42,16 @@ public class Question {
 	private int q_category;
 	private String q_subject;
 	private String q_content;
+	@Column(name="q_date", nullable=false)
 	private Date q_date;
 	private int q_status;
 	private String admin_content;
 	private Date admin_date;
+	
+	@PrePersist
+	protected void onDate() {
+		q_date = new Date();
+	}
+	
 	
 }

@@ -25,4 +25,14 @@ public class JpaKgeRepository implements KgeRepository {
 		System.out.println("JpaKgeRepository findAll questionList.size() -->"+questionList.size());
 		return questionList;
 	}
+
+	@Override
+	public Question save(Question question) {
+		//회원 저장
+		System.out.println("[JpaKgeRepository] questionSave Start..");
+		em.persist(question);
+		System.out.println("em.persist(question) question.getQ_num().."+question.getQ_num());
+		System.out.println("em.persist(question) After...");
+		return question;
+	}
 }

@@ -1,4 +1,4 @@
-package com.oracle.S202207.model;
+package com.oracle.S202207.model.kmj;
 
 import java.util.Date;
 
@@ -10,7 +10,6 @@ import lombok.Setter;
 public class Membership {
 	private int memno;
 	private int userno;
-	private Date paystart;
-	private Date payend;
-
+	private String paystart;
+	private String payend;
 }

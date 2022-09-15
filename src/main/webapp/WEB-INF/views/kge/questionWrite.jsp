@@ -22,7 +22,7 @@
 			<form action="QuestionWrite" id="Q_WriteForm" method="post">
 				<div class="input-group mb-3">
 				  <span class="input-group-text" id="basic-addon1">질문 유형</span>
-				  <select class="form-select" id="autoSizingSelect">
+				  <select class="form-select" id="autoSizingSelect" name="q_category">
 				      <option selected>(선택하세요)</option>
 				      <option value="1">회원 정보</option>
 				      <option value="2">기타</option>
@@ -31,13 +31,14 @@
 				
 				<div class="input-group mb-3">
 				  <span class="input-group-text" id="basic-addon2">제목</span>
-				  <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2">
+				  <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2" name="q_subject">
 				</div>
 				
 				<div class="input-group">
 				  <span class="input-group-text">내용</span>
-				  <textarea class="form-control" aria-label="With textarea"></textarea>
+				  <textarea class="form-control" aria-label="With textarea" name="q_content"></textarea>
 				</div>
+				
 				
 				<button type="submit" class="btn btn-primary">등록</button>
 			</form>

@@ -12,7 +12,7 @@
 
 #home {
 	font-family: 'Mochiy Pop One', sans-serif;
-	font-size: 40px;
+	font-size: 25px;
 	padding: 10px;
 	text-decoration: none;
 	color: #528a36;
@@ -35,7 +35,7 @@
 
 #bar li {
 	padding:10px;
-	font-size:20px;
+	font-size:16px;
 	display: inline-block;
 }
 
@@ -43,7 +43,7 @@
 	cursor: pointer;
 }
 
-.signIn {
+.signBtn {
 	background-color: #f5821f;
 	padding: 8px 12px;
     border-radius: 11px;
@@ -51,6 +51,10 @@
     color: white;
 }
 
-.signIn:hover {
+.mplist a:hover {
+	color: #613d1a;
+}
+
+.signBtn:hover {
 	color: white;
 }

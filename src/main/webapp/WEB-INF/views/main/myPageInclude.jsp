@@ -21,8 +21,8 @@
 			<br>
 		<ul id="nav">
 			<li class="list"><a href="#">프로필 정보</a></li>
-			<li class="list"><a href="#">우프 멤버쉽 가입</a></li><!-- 결제 내역 있으면 정보 -->
-			<li class="list"><a href="#">멤버쉽 정보</a></li><!-- 결제 내역 없으면 가입 -->
+			<li class="list"><a href="membership">우프 멤버쉽 가입</a></li><!-- 결제 내역 있으면 정보 -->
+			<li class="list"><a href="membershipInfo">멤버쉽 정보</a></li><!-- 결제 내역 없으면 가입 -->
 			<li class="list"><a href="#">호스트 되기</a></li><!-- 기존 호스트라면 호스트 정보 -->
 			<li class="list"><a href="#">1:1 문의</a></li><!-- 기존 호스트라면 호스트 정보 -->
 		</ul>
