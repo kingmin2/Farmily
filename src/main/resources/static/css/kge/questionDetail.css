@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+
+.q_Detail {
+	padding-top: 70px;
+	margin-left: 250px;
+	text-align: center;
+}
+.container .q_Detail .q_DetailPage {
+	font-size: 22px;
+    font-weight: 400;
+}
+.container .q_Detail .q_DetailLine1 {
+	height: 4px;
+    width: 900px;
+    background-color: #E27E22;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.container .q_Detail .q_DetailTitleGroup {
+	margin-left: 80px;
+    margin-right: 80px;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+}
+.container .q_Detail .q_DetailTitle {
+    font-weight: 600;
+}
+.container .q_Detail .q_DetailButtons {
+   
+}
+.container .q_Detail .q_DetailButtons .q_DetailModify {
+    border-radius: 6px;
+    background-color: #E27E22;
+    border: none;
+    color: white;
+}
+.container .q_Detail .q_DetailButtons .q_DetailDelete {
+	border-radius: 6px;
+    background-color: #E27E22;
+    border: none;
+    color: white;
+}
+.container .q_Detail .a_DetailNameDate {
+	margin-left: 80px;
+    margin-right: 80px;
+	position: relative;
+	display: flex;
+	justify-content: flex-start;
+}
+.container .q_Detail .q_DetailLine2 {
+	height: 4px;
+    width: 900px;
+    background-color: #E27E22;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+.container .q_Detail .q_DetailContent {
+	height: 300px;
+	width: 900px;
+	background-color: #fdf9f3;
+	margin: 0 auto 15px auto;
+	border: 1px solid #F5821F;
+}
+.container .q_Detail .q_DetailAnswer {
+	margin-top: 20px;
+	height: 200px;
+	width: 900px;
+	background-color: #F4B717;
+	margin: 0 auto;
+	
+}

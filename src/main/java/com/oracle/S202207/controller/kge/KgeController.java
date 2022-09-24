@@ -60,5 +60,21 @@ public class KgeController {
 		
 		return "kge/questionList";
 	}
+	
+	// 1:1 게시판 상세 페이지
+	@GetMapping(value = "QuestionDetail")
+	public String detailQuestion(HttpServletRequest request, Model model) {
+		System.out.println("[KgeController] detailQuestion Start..");
+		
+//		String userno = request.getSession().getAttribute("sessionId").toString();  //세션 연결되어 있을 때 사용하기
+//		int userno = 2;
+		
+//		question.setUserno(userno);
+//		List<Question> questionList = kgeService.getListAllQuestion(userno);
+//		System.out.println("questionList.size() -->"+questionList.size());
+//		System.out.println("questionList.name() -->"+questionList.get(0).getMember().getName());
+//		model.addAttribute("questions", questionList);
+		return "kge/questionDetail";
+	}
 
 	}

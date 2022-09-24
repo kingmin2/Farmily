@@ -11,7 +11,7 @@
 <meta charset="UTF-8">
 <title>1:1 문의하기</title>
 <link href="css/kmj/main.css" rel="stylesheet" type="text/css">
-
+<link href="css/kge/questionList.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
@@ -43,7 +43,8 @@
 						  <tbody>
 						    <tr>
 						      <th scope="row">${question.q_num}</th>
-						      <td class="q_List">${question.q_subject}</td>
+						      <%-- <td><a href="${path}/productDetails?pro_num=${item.pro_num}">${item.pro_title}</a></td> --%>
+						      <td class="q_List"><a href="QuestionDetail?q_num=${question.q_num}">${question.q_subject}</a></td>
 						      <td class="q_List">${question.member.name}</td> <!-- foreign key로 연결된 member 객체의 name값을 가져오기 -->
 						      <td class="q_List">${question.q_date}</td>
 						      
