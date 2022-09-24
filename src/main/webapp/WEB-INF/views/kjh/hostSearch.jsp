@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
     
 <%
 	String context = request.getContextPath();
@@ -21,7 +22,14 @@
 		
 		openWin=window.open(popUrl,"상세조건검색",popOption);
 	}
+	
+	
+	
 </script>	
+
+
+
+
 
 <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=4sz4wcsnub"></script>
 <script type="text/javascript" src="js/kjh/MarkerClustering.js"></script>
@@ -81,20 +89,29 @@
 													</script>
 											</c:when>
 											<c:when test="${not empty userno }">
-												<script type="text/javascript">
-													var farmno=${list.farmno };
-													var farmno1=${wish.farmno};
-												</script>
-												<c:set var="loop" value="false"/>
-												<c:forEach var="wish" items="${wishlist }">
-													<c:if test="${list.farmno==wish.farmno }">
-														<button class="btnwish"><img alt="" src="img/fillheart.png"></button>
-														<c:set var="loop" value="true"/>
-													</c:if>
-												</c:forEach>
-										
+												<c:choose>
+													<c:when test="${not empty wishno}">
+														<c:set var="wishli" value="1"/>
+														<c:forEach var="wishno" items="${wishno }">
+															<c:if test="${list.farmno==wishno.farmno }">
+																<c:set var="wishli" value="0"/>
+															</c:if>
+														</c:forEach>
+														<c:choose>
+															<c:when test="${wishli eq '0'}">
+																<button class="btnwish" onclick="fe(${list.farmno})"><img alt="" src="img/fillheart.png"></button>
+															</c:when>
+															<c:otherwise>
+																<button class="btnwish" onclick="ef(${list.farmno})"><img alt="" src="img/emptyheart.png"></button>
+															</c:otherwise>
+														</c:choose>
+													</c:when>
+													<c:otherwise>
+														<button class="btnwish" onclick="ef(${list.farmno})"><img alt="" src="img/emptyheart.png"></button>
+													</c:otherwise>
+												</c:choose>
 											</c:when>
-											</c:choose>
+										</c:choose>
 									</div>
 								</li>
 							</c:forEach>

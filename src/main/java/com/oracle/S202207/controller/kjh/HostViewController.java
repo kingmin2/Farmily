@@ -2,7 +2,10 @@ package com.oracle.S202207.controller.kjh;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -52,11 +55,10 @@ public class HostViewController {
 		System.out.println("KjhController wishlist Starts...");
 		List<Wishlist> wishlist=js.findWish(userno);
 		System.out.println("KjhController wishlist Ends...");
-		System.out.println("wish"+wishlist.get(2).getFarmno()+wishlist.get(3).getFarmno());
 		
 		model.addAttribute("hostList", hosts);
 		model.addAttribute("userno", userno);
-		model.addAttribute("wishlist", wishlist);
+		model.addAttribute("wishno", wishlist);
 		
 		return "kjh/hostSearch";
 	}
@@ -102,8 +104,6 @@ public class HostViewController {
 		
 		return "kjh/hostDetail";
 	}
-	
-	
 	
 	
 	// 호스트 상세 조건 팝업창
