@@ -25,4 +25,10 @@ public class ProfileServiceImpl implements ProfileService {
 		session.invalidate();
 	}
 
+	@Override
+	public int signUp(Member member) {
+		int result = pd.signUp(member);
+		return result;
+	}
+
 }

@@ -28,10 +28,12 @@
 	margin: auto;
 }
 
-.IDFrame {
+.signUpData div {
 	margin-top: 25px;
 }
 
-.pwdFrame {
+#btnSign {
+	background-color: #f5821f;
+	width: 100%;
 	margin-top: 25px;
 }

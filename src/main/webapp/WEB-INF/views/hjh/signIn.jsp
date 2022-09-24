@@ -36,12 +36,12 @@
 				<div class="titleFrame">
 					<h1 class="signInTitle">FARMily</h1>
 				</div>
-				<form action="loginCheck" method="post">
-					<div class="IDFrame">
+				<form action="loginCheck" method="post" class="signInData">
+					<div>
 						<label class="form-label" for="id">ID</label>
 						<input id="id" class="ember-text-field ember-view form-control" name="id" type="text">
 					</div>
-					<div class="pwdFrame">
+					<div>
 						<label class="form-label" for="passwd">비밀번호</label>
 						<input id="passwd" class="ember-text-field ember-view form-control" name="passwd" type="password">
 					</div>
