@@ -10,4 +10,6 @@ public interface ProfileService {
 
 	void signOut(HttpSession session);
 
+	int signUp(Member member);
+
 }

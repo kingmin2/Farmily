@@ -6,4 +6,7 @@
 	<select id="hjhLoginCheck" parameterType="Member" resultType="Member">
 		SELECT * FROM MEMBER WHERE id = #{id} AND passwd = #{passwd}
 	</select>
+	<insert id="hjhInsertProfile" parameterType="Member">
+		INSERT INTO MEMBER(userno, id, passwd, name, email, con_addr, con_tel, birth, joindate, membership, m_level) VALUES (#{userno}, #{id}, #{passwd}, #{name}, #{email}, #{con_addr}, #{con_tel}, #{birth}, SYSDATE, 0, 0)
+	</insert>
 </mapper>

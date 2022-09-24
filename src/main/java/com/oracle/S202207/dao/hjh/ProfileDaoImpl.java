@@ -18,4 +18,10 @@ public class ProfileDaoImpl implements ProfileDao {
 		return member;
 	}
 
+	@Override
+	public int signUp(Member member) {
+		int result = session.insert("hjhInsertProfile", member);
+		return result;
+	}
+
 }
