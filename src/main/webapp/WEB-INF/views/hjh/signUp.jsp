@@ -17,7 +17,7 @@
 				<div class="titleFrame">
 					<h1 class="signUpTitle">회원가입</h1>
 				</div>
-				<form action="signUp" method="post" class="signUpData">
+				<form action="insertPrf" method="post" class="signUpData" onsubmit="dateConvert()">
 					<div>
 						<label class="form-label" for="id">ID</label>
 						<input id="id" class="ember-text-field ember-view form-control" name="id" type="text">

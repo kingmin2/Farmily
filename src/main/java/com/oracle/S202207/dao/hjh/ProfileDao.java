@@ -6,6 +6,6 @@ public interface ProfileDao {
 
 	Member loginCheck(Member member);
 
-	int signUp(Member member);
+	int insertPrf(Member member);
 
 }

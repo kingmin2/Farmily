@@ -43,13 +43,18 @@ public class ProfileController {
 		return "hjh/signIn";
 	}
 	
-	@PostMapping(value = "signUp")
-	public String signUp(Member member, HttpServletRequest request) {
-		int result =  ps.signUp(member);
+	@GetMapping(value = "signUp")
+	public String signUp() {
+		return "hjh/signUp";
+	}
+	
+	@PostMapping(value = "insertPrf")
+	public String insertPrf(Member member, HttpServletRequest request) {
+		int result = ps.insertPrf(member);
 		if(result > 0) {
-			return "redirect:signIn";
+			return "redirect:singIn";
 		}else {
-			return "redirect:signUp";
+			return "redirect:singUp";
 		}
 	}
 

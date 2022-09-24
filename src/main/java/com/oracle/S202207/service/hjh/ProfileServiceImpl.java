@@ -26,8 +26,8 @@ public class ProfileServiceImpl implements ProfileService {
 	}
 
 	@Override
-	public int signUp(Member member) {
-		int result = pd.signUp(member);
+	public int insertPrf(Member member) {
+		int result = pd.insertPrf(member);
 		return result;
 	}
 
